@@ -20,52 +20,41 @@ class ListDataItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dismissible(
-        key: Key(data.tugas),
-        background: Container(
-          color: Colors.blue,
-        ), 
-        onDismissed: (direction) {
-          print("menghapus");
-          new Container(
-              color: Colors.black,
-              child: new StoreConnector<ListData, OnStateChanged>(
+    return new StoreConnector<ListData, OnStateChanged>(
+      converter: (store) {
+        return (item) => store.dispatch(RemoveItemAction(item));
+      },
+      builder: (context, callback) {
+        return Dismissible(
+            key: Key(data.tugas),
+            background: Container(
+              color: Colors.blue,
+            ),
+            onDismissed: (direction) {
+              callback(Data(data.tugas, data.checked));
+              print("menghapus");
+              Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text("${data.tugas} dihapus")));
+            
+            },
+            child: new ListTile(
+              title: new Text(data.tugas),
+              leading: new StoreConnector<ListData, OnStateChanged>(
                 converter: (store) {
-                  print("hapus");
-                  return (item) => store.dispatch(RemoveItemAction(item));
+                  return (item) => store.dispatch(ToogleItemStateAction(item));
                 },
                 builder: (context, callback) {
-                  print("terhapus");
-                  callback(Data(data.tugas, data.checked));
-                  Text("${data.tugas} dihapus");
-                  // Scaffold.of(context).showSnackBar(SnackBar(
-                  //       content: Text("${data.tugas} dihapus"),
-                  //     ));
+                  return new Checkbox(
+                    value: data.checked,
+                    onChanged: (bool value) {
+                      callback(Data(data.tugas, value));
+                    },
+                  );
                 },
-              ));
-              
-              
-
-          Scaffold
-              .of(context)
-              .showSnackBar(SnackBar(content: Text("${data.tugas} dihapus")));
-        },
-        child: new ListTile(
-          title: new Text(data.tugas),
-          leading: new StoreConnector<ListData, OnStateChanged>(
-            converter: (store) {
-              return (item) => store.dispatch(ToogleItemStateAction(item));
-            },
-            builder: (context, callback) {
-              return new Checkbox(
-                value: data.checked,
-                onChanged: (bool value) {
-                  callback(Data(data.tugas, value));
-                },
-              );
-            },
-          ),
-        ));
+              ),
+            ));
+      },
+    );
   }
 }
 
