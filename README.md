@@ -1,5 +1,5 @@
 
-<img src="https://github.com/Leviaran/TaskTodoRedux/blob/master/img/todo.gif" alt="gif" width="500px"/>
+<img src="https://github.com/Leviaran/TaskTodoRedux/blob/master/img/todo.gif" alt="gif" width="300px"/>
 </br>
 </br>![Flutter Logo](https://flutter.io/images/flutter-mark-square-100.png)
 # Flutter Redux Todo app
