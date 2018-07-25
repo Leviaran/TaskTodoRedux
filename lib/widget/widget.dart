@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_task_apps/model/list_data.dart';
 import 'package:redux_task_apps/model/data_model.dart';
