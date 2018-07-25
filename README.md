@@ -1,3 +1,4 @@
+![todo gif](https://github.com/Leviaran/TaskTodoRedux/blob/master/img/todo.gif)
 ![Flutter Logo](https://flutter.io/images/flutter-mark-square-100.png)
 # Flutter Redux Todo app
 This is *Flutter todo apps*, imitate google Todo App version. This is just example, there still under development. Develop with Redux Architecture,Redux is programming architecture especially with React, made in javascripth and now used in reactive framework like React native or Flutter. Redux based from Flux architecture made by Facebook. Data not stored in Sqflite, but store with JSON format then save in Shared preferences in String type. 
@@ -16,9 +17,6 @@ This is *Flutter todo apps*, imitate google Todo App version. This is just examp
 Below is redux data flow
 
 <img src="https://github.com/Leviaran/TaskTodoRedux/blob/master/img/Flow.png" alt="drawing" width="400px"/>
-
-Credit image from Hackernoon
-
 
 ### Library package
 
