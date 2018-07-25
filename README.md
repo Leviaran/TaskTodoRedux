@@ -15,7 +15,7 @@ This is *Flutter todo apps*, imitate google Todo App version. This is just examp
 
 Below is redux data flow
 
-![Flutter Logo](https://cdn-images-1.medium.com/max/800/1*S_BZUDym3j0Vxjfi8D21Zg.png) 
+![Flutter Logo](https://github.com/Leviaran/TaskTodoRedux/blob/master/img/Flow.png) 
 
 Credit image from Hackernoon
 
